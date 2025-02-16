@@ -14,7 +14,8 @@ For detailed usage instructions and tutorials, refer to [Notebook](link_here).
 To install PyWhy-LLM, you can use pip:
 
 ```bash
-pip install pywhy-llm
+#pip install pywhy-llm
+pip install pywhyllm
 ```
 
 ## Usage
@@ -22,7 +23,8 @@ pip install pywhy-llm
 PyWhy-LLM seamlessly integrates into your existing causal inference process. Import the necessary classes and start exploring the power of LLM-augmented causal analysis.
 
 ```python
-from pywhy-llm import ModelSuggester, IdentificationSuggester, ValidationSuggester
+from pywhyllm import ModelSuggester, IdentificationSuggester, ValidationSuggester
+# from pywhyllm.protocols import ModelerProtocol
 
 ```
 

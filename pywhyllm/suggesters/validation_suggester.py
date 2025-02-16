@@ -1,5 +1,5 @@
 from typing import List, Tuple, Dict, Set
-from suggesters.protocols import IdentifierProtocol
+from .protocols import IdentifierProtocol
 from .helpers import RelationshipStrategy, ModelType
 from .prompts import prompts as ps
 import networkx as nx
@@ -74,7 +74,8 @@ class ValidationSuggester(IdentifierProtocol):
                 edited_factors_list=edited_factors_list,
                 negative_controls_counter=negative_controls_counter,
                 llm=llm,
-                expert=expert,
+                # expert=expert,??
+                expert=experts[0],
                 analysis_context=analysis_context,
                 temperature=temperature,
             )
@@ -190,7 +191,8 @@ class ValidationSuggester(IdentifierProtocol):
                 program=suggest,
                 latent_confounders_counter=latent_confounders_counter,
                 llm=llm,
-                expert=expert,
+                # expert=expert,
+                expert=experts[0],
                 analysis_context=analysis_context,
                 temperature=temperature,
             )
