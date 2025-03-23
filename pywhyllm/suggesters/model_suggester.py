@@ -7,18 +7,18 @@ import re
 
 
 class ModelSuggester(ModelerProtocol):
-
     CONTEXT: str = """causal mechanisms"""
 
-    def __init__(self, llm):
-        if llm == 'gpt-4':
-            self.llm = guidance.models.OpenAI('gpt-4')
+    def __init__(self, llm=None):
+        if llm is not None:
+            if (llm == 'gpt-4'):
+                self.llm = guidance.models.OpenAI('gpt-4')
 
     def suggest_domain_expertises(
             self,
-            analysis_context,
             factors_list,
-            n_experts: int = 1
+            n_experts: int = 1,
+            analysis_context=CONTEXT
     ):
 
         expertise_list: List[str] = list()
@@ -59,9 +59,9 @@ class ModelSuggester(ModelerProtocol):
 
     def suggest_domain_experts(
             self,
-            analysis_context,
             factors_list,
-            n_experts: int = 5
+            n_experts: int = 5,
+            analysis_context=CONTEXT
     ):
 
         experts_list: Set[str] = set()
@@ -204,10 +204,10 @@ class ModelSuggester(ModelerProtocol):
             self,
             treatment,
             outcome,
-            analysis_context,
             domain_expertise,
             factors_list,
-            confounders_edges
+            confounders_edges,
+            analysis_context=CONTEXT
     ):
         confounders: List[str] = list()
 
@@ -277,10 +277,10 @@ class ModelSuggester(ModelerProtocol):
 
     def suggest_parents(
             self,
-            analysis_context,
             domain_expertise,
             factor,
-            factors_list
+            factors_list,
+            analysis_context=CONTEXT
     ):
         parent_candidates: List[str] = []
 
@@ -345,10 +345,10 @@ class ModelSuggester(ModelerProtocol):
 
     def suggest_children(
             self,
-            analysis_context,
             domain_expertise,
             factor,
-            factors_list
+            factors_list,
+            analysis_context=CONTEXT
     ):
 
         children_candidates: List[str] = []
@@ -519,7 +519,7 @@ class ModelSuggester(ModelerProtocol):
                 else:
                     suggested_parent = self.suggest_parents(
                         analysis_context=analysis_context,
-                        domain_expertise = expert_list[0],
+                        domain_expertise=expert_list[0],
                         factor=factor,
                         factors_list=factors_list,
                     )

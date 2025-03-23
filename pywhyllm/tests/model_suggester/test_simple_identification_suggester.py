@@ -2,8 +2,8 @@ from unittest.mock import MagicMock
 from guidance.models._openai import OpenAI
 
 from pywhyllm.suggesters.simple_identification_suggester import SimpleIdentificationSuggester
-from ...tests.model_suggester.example_variables import TEST_PAIRS as pairs
-from ...tests.model_suggester.example_variables import TEST_VARIABLE_LISTS as lists
+from ...tests.model_suggester.simple_suggester_example_variables import TEST_PAIRS as pairs
+from ...tests.model_suggester.simple_suggester_example_variables import TEST_VARIABLE_LISTS as lists
 
 class TestSimpleIdentificationSuggester(object):
 
