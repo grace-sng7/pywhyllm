@@ -6,7 +6,7 @@ from pywhyllm.utils.data_loader import download_causenet, load_causenet_json, cr
 from pywhyllm.utils.augmented_model_suggester_utils import *
 
 
-class AugmentedModelSuggester(SimpleModelSuggester):
+class AugmentedModelSuggesterCauseNet(SimpleModelSuggester):
     """
         A class that extends SimpleModelSuggester and currently provides methods for suggesting causal relationships between variables by leveraging the CauseNet dataset for Retrieval Augmented Generation (RAG).
 
